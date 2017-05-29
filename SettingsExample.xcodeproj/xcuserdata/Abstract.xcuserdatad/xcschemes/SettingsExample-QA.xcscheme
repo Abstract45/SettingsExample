@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E8D1B02A1EDB2EB7002E8008"
-               BuildableName = "SettingsExample.app"
-               BlueprintName = "SettingsExample"
+               BlueprintIdentifier = "E8D1B04E1EDB2ED1002E8008"
+               BuildableName = "SettingsExample-QA.app"
+               BlueprintName = "SettingsExample-QA"
                ReferencedContainer = "container:SettingsExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E8D1B02A1EDB2EB7002E8008"
-            BuildableName = "SettingsExample.app"
-            BlueprintName = "SettingsExample"
+            BlueprintIdentifier = "E8D1B04E1EDB2ED1002E8008"
+            BuildableName = "SettingsExample-QA.app"
+            BlueprintName = "SettingsExample-QA"
             ReferencedContainer = "container:SettingsExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E8D1B02A1EDB2EB7002E8008"
-            BuildableName = "SettingsExample.app"
-            BlueprintName = "SettingsExample"
+            BlueprintIdentifier = "E8D1B04E1EDB2ED1002E8008"
+            BuildableName = "SettingsExample-QA.app"
+            BlueprintName = "SettingsExample-QA"
             ReferencedContainer = "container:SettingsExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E8D1B02A1EDB2EB7002E8008"
-            BuildableName = "SettingsExample.app"
-            BlueprintName = "SettingsExample"
+            BlueprintIdentifier = "E8D1B04E1EDB2ED1002E8008"
+            BuildableName = "SettingsExample-QA.app"
+            BlueprintName = "SettingsExample-QA"
             ReferencedContainer = "container:SettingsExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

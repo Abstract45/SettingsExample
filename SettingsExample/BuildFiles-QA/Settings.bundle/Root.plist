@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>App Info</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Version Number</string>
+			<key>Key</key>
+			<string>versionInfo</string>
+			<key>DefaultValue</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Build Number</string>
+			<key>Key</key>
+			<string>buildNumber</string>
+			<key>DefaultValue</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Disclaimer</string>
+			<key>File</key>
+			<string>child</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Font type</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Font type</string>
+			<key>Key</key>
+			<string>fontChooser</string>
+			<key>DefaultValue</key>
+			<string>Oriya Sangam MN</string>
+			<key>Titles</key>
+			<array>
+				<string>Normal</string>
+				<string>Cursive</string>
+				<string>Chalk</string>
+				<string>Pencil</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>Oriya Sangam MN</string>
+				<string>Party LET</string>
+				<string>Verdana</string>
+				<string>Noteworthy</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Font Size </string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSSliderSpecifier</string>
+			<key>MaximumValueImage</key>
+			<string>150</string>
+			<key>MinimumValueImage</key>
+			<string>0</string>
+			<key>Key</key>
+			<string>fontSize</string>
+			<key>DefaultValue</key>
+			<integer>100</integer>
+			<key>MinimumValue</key>
+			<integer>15</integer>
+			<key>MaximumValue</key>
+			<integer>150</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
