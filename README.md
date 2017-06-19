@@ -8,6 +8,7 @@
 - Double check the names for the keys in the settings Bundle
 - Make sure to synchronize defaults if the app exits suddenly in the app delegate
 - Make sure to set the identifier values approrpriately as this is what you will be using to grab the values later on.
+- When adjusting the types and groups there are two ways of moving them around. One way is to copy and paste items as necessary, the other is to use source code on the info plist and start configuring the plist that way. *If you do end up using source code make sure that elements are placed properly.
 
 ##### Steps to configure your Settings Bundle:
 1. Add files - Under Resources choose Settings Bundle
