@@ -2,7 +2,7 @@
 
 ##### Things to watch out for:
 - Do not rename the Settings Bundle (if you need to use it for multiple schemes make seperate folders and then add those Settings Bundles to the folders to keep them seperate)
-- If you delete all userDefaults then you will need to re-register the settings Bundle
+- **** (I made this mistake) RegisterDefaults initializes values for the UserDefaults in the current process. Meaning it is not persistent. If you want persistent data use `UserDefaults.standard.setValue(Any?, forKey: String?)` OR `set(value: Any?, forkey: String?)`
 - Make sure that each Settings Bundle is targeting the correct Targets, if you have multiple targets (Dev, QA, Prod)
 - Make sure that before putting custom settings that the top level contains a group
 - Double check the names for the keys in the settings Bundle
