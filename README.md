@@ -1,5 +1,14 @@
 ### This repo shows the different ways to implement a Settings Bundle
 
+##### Things to watch out for:
+- Do not rename the Settings Bundle (if you need to use it for multiple schemes make seperate folders and then add those Settings Bundles to the folders to keep them seperate)
+- If you delete all userDefaults then you will need to re-register the settings Bundle
+- Make sure that each Settings Bundle is targeting the correct Targets, if you have multiple targets (Dev, QA, Prod)
+- Make sure that before putting custom settings that the top level contains a group
+- Double check the names for the keys in the settings Bundle
+- Make sure to synchronize defaults if the app exits suddenly in the app delegate
+- Make sure to set the identifier values approrpriately as this is what you will be using to grab the values later on.
+
 ##### Steps to configure your Settings Bundle:
 1. Add files - Under Resources choose Settings Bundle
 2. Make a folder in your Project Directory and change the location of your Settings Bundle
@@ -7,6 +16,52 @@
 4. Open up Root.plist under your Settings Bundle
 5. Under Preference Items is where you start building your settings
 6. Always start out with a Group then the settings type underneath
+
+##### How to register your settings Bundle in code:
+1. Get Settings from Bundle
+2. Get the Root.plist file as a dictionary
+3. Get the PreferenceSpecifiers as an array of dictionaries
+4. Set a dictionary to all the default values and their respective keys in a for loop.
+5. Register userdefaults with the above dictionary
+
+```swift
+func registerSettingsBundle() {
+        guard let settingsBundle = Bundle.main.url(forResource: "Settings", withExtension:"bundle") else {
+        NSLog("Could not find Settings.bundle")
+            return;
+        }
+        
+        guard let settings = NSDictionary(contentsOf: settingsBundle.appendingPathComponent("Root.plist")) else {
+            NSLog("Could not find Root.plist in settings bundle")
+            return
+        }
+        
+        guard let preferences = settings.object(forKey: "PreferenceSpecifiers") as? [[String: AnyObject]] else {
+            NSLog("Root.plist has invalid format")
+            return
+        }
+        
+        var defaultsToRegister = [String: AnyObject]()
+        for var p in preferences {
+            if let k = p["Key"] as? String, let v = p["DefaultValue"] {
+                NSLog("%@", "registering \(v) for key \(k)")
+                defaultsToRegister[k] = v
+            }
+        }
+        
+        Userdefaults.standard.register(defaults: defaultsToRegister)
+}
+```
+
+##### Grabbing specific values from the settings:
+- Grabbing values is easy, simply use Userdefaults and the identifier key that you set earlier for each type. 
+- Note that I am using Userdefaults.standard.string(forKey: String, you can use whatever is apropriate for your case. i.e. bool(forKey: String).
+
+```Swift
+let myValue = Userdefaults.standard.string(forKey:"Your identifier")
+```
+##### Changing values from within the app is as easy as simply setting the value of its identifier to a new value.
+
 
 ##### Setting up Title type:
 1. Once you have a group with a title, create a title type setting underneath it
@@ -41,11 +96,3 @@
 2. Input default, min and max values
 3. Add two new keys "Min Value Image Filename" and "Max Value Image Filename"
 4. Add two image files with approximate dimension of 50 X 40 pixels (Note: Do not put large images as they will overlap in settings)
-
-##### Things to watch out for:
-- Do not rename the Settings Bundle (if you need to use it for multiple schemes make seperate folders and then add those Settings Bundles to the folders to keep them seperate)
-- If you delete all userDefaults then you will need to re-register the settings Bundle
-- Make sure that each Settings Bundle is targeting the correct Targets, if you have multiple targets (Dev, QA, Prod)
-- Make sure that before putting custom settings that the top level contains a group
-- Double check the names for the keys in the settings Bundle
-- Make sure to synchronize defaults if the app exits suddenly in the app delegate
